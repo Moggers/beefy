@@ -13,7 +13,7 @@ gulp.task('default', function() {
         .pipe(gulp.dest("dist"));
 });
 gulp.task('watch', function() {
-    var watcher = gulp.watch('src/*.js', ['default', 'reload']);
+    var watcher = gulp.watch('src/*.js', ['default']);
     watcher.on('change', function(event) {
         console.log('file' + event.path + ' was ' + event.type + ', running tasks..');
     })
