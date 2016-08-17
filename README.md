@@ -3,7 +3,7 @@ A small project to prove my competence with javascript, git, and unit testing.
 Beefy shall exist on a 5x5 zero indexed field. Beefy shall accept five possible commands listed below.
 Attempting to initiate a command which would place beefy beyond the allowed field shall fail.
 ## Goals
-Beefy should read from input the following commands.
+Beefy shall act on the following commands.
 #### PLACE
 Moves beefy directly to any place on the board
 #### MOVE
