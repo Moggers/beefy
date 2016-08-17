@@ -1,0 +1,1 @@
+{"version":3,"sources":["beefy.js"],"names":[],"mappings":";;AAAA;;AACA,QAAQ,GAAR,CAAY,eAAZ;AACA,QAAQ,GAAR,CAAY,yBAAZ","file":"all.js","sourcesContent":["import \"babel-polyfill\";\r\nconsole.log(\"HELLO WORLD@!\")\r\nconsole.log(\"Is the watcher working?\")"],"sourceRoot":"/source/"}

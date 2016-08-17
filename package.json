@@ -1,0 +1,28 @@
+{
+  "name": "beefy-cli",
+  "version": "1.0.0",
+  "main": "beefy.js",
+  "dependencies": {},
+  "description": "A small project to prove my competence with javascript, git, and unit testing.\r Beefy shall exist on a 5x5 zero indexed field. Beefy shall accept five possible commands listed below.\r Attempting to initiate a command which would place beefy beyond the allowed field shall fail.\r ## Goals\r Beefy should read from input the following commands.\r ### PLACE\r Moves beefy directly to any place on the board\r ### MOVE\r Drives beefy forward\r ### LEFT\r Turns beefy left\r ### RIGHT\r Turns beefy RIGHT\r ### REPORT\r Dumps beefy's position and facing to output",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Moggers/beefy.git"
+  },
+  "author": "mattkramara",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Moggers/beefy/issues"
+  },
+  "homepage": "https://github.com/Moggers/beefy#readme",
+  "devDependencies": {
+    "babel-polyfill": "^6.13.0",
+    "babel-preset-es2015": "^6.13.2",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-concat": "^2.6.0",
+    "gulp-sourcemaps": "^1.6.0"
+  }
+}
