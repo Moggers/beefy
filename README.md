@@ -2,6 +2,8 @@
 A small project to prove my competence with javascript, git, and unit testing.
 Beefy shall exist on a 5x5 zero indexed field. Beefy shall accept five possible commands listed below.
 Attempting to initiate a command which would place beefy beyond the allowed field shall fail.
+## Usage
+node beefy.js
 ## Goals
 Beefy shall act on the following commands.
 #### PLACE
