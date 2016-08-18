@@ -1,3 +1,4 @@
+import Beefy from "../../dist/beefy.js"
 global.Beefy = Beefy
 describe("PLACE command", function() {
     it("places a robot on the table", function() {

@@ -3,6 +3,9 @@ var sourcemaps = require('gulp-sourcemaps');
 var babel = require('gulp-babel');
 var concat = require('gulp-concat');
 var exec = require('gulp-exec');
+var browserify = require('browserify')
+var rename = require('gulp-rename')
+var fs = require('fs')
 
 function handleError(err){
     console.log("Failed to build")
@@ -15,17 +18,30 @@ gulp.task('cli', function() {
         .pipe(sourcemaps.init())
         .pipe(babel())
         .on("error", handleError)
-        .pipe(concat("cli.js"))
         .pipe(sourcemaps.write("."))
         .pipe(gulp.dest("dist"));
 
 });
-gulp.task('tests', function() {
-    return gulp.src(['src/js/Beefy.js', 'src/tests/BeefySpec.js'])
+gulp.task('graphics', function() {
+    return browserify("./src/js/beefygraphics.js")
+        .transform("babelify", {presets : ['es2015']})
+        .bundle()
+        .pipe(fs.createWriteStream("dist/beefygraphics.js"))
+        .on('error', handleError)
+})
+gulp.task('beefy', function() {
+    return gulp.src(['src/js/beefy.js'])
         .pipe(sourcemaps.init())
         .pipe(babel())
         .on('error', handleError)
-        .pipe(concat("BeefySpec.js"))
+        .pipe(sourcemaps.write("."))
+        .pipe(gulp.dest("dist"))
+})
+gulp.task('tests', function() {
+    return gulp.src(['src/js/beefy.js', 'src/tests/BeefySpec.js'])
+        .pipe(sourcemaps.init())
+        .pipe(babel())
+        .on('error', handleError)
         .pipe(sourcemaps.write("."))
         .pipe(gulp.dest("spec/beefy"))
 })
@@ -38,6 +54,8 @@ gulp.task('runtests', function() {
     .on("error", handleError)
 })
 gulp.task('watch', function() {
-    var watcher = gulp.watch(['src/js/beefycli.js', 'src/js/beefy.js'], ['cli']);
-    var testwatcher = gulp.watch(['src/js/Beefy.js','src/tests/*.js'], ['tests', 'runtests']);
+    var beefywatcher = gulp.watch(['src/js/beefy.js'], ['beefy']);
+    var cliwatcher = gulp.watch(['src/js/beefycli.js'], ['cli']);
+    var graphicswatcher = gulp.watch(['src/js/beefygraphics.js'], ['graphics']);
+    var testwatcher = gulp.watch(['src/tests/*.js'], ['tests', 'runtests']);
 });
