@@ -3,9 +3,16 @@ A small project to prove my competence with javascript, git, and unit testing.
 Beefy shall exist on a 5x5 zero indexed field. Beefy shall accept five possible commands listed below.
 Attempting to initiate a command which would place beefy beyond the allowed field shall fail.
 ## Usage
-npm install
-gulp
-node beefy.js
+### CLI
+1. npm install
+2. gulp cli
+3. node dist/cli.js
+
+### Tests
+1. npm install
+2. gulp tests
+3. jasmine
+
 ## Goals
 Beefy shall act on the following commands.
 #### PLACE

@@ -10,12 +10,12 @@ function handleError(err){
     this.emit('end');
 }
 
-gulp.task('default', function() {
-    return gulp.src("src/js/*.js")
+gulp.task('cli', function() {
+    return gulp.src(["src/js/beefy.js", 'src/js/beefycli.js'])
         .pipe(sourcemaps.init())
         .pipe(babel())
         .on("error", handleError)
-        .pipe(concat("all.js"))
+        .pipe(concat("cli.js"))
         .pipe(sourcemaps.write("."))
         .pipe(gulp.dest("dist"));
 
@@ -38,6 +38,6 @@ gulp.task('runtests', function() {
     .on("error", handleError)
 })
 gulp.task('watch', function() {
-    var watcher = gulp.watch('src/js/*.js', ['default']);
+    var watcher = gulp.watch(['src/js/beefycli.js', 'src/js/beefy.js'], ['cli']);
     var testwatcher = gulp.watch(['src/js/Beefy.js','src/tests/*.js'], ['tests', 'runtests']);
 });
