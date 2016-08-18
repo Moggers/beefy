@@ -34,6 +34,7 @@ N/A
 
 #### Expected result
 Software states that beefy is in position 1,1, and facing north.
+
 ### PLACE edgetest
 Test that place outside the boundaries of the table will fail
 #### Precondition
@@ -49,6 +50,7 @@ N/A
 
 #### Expected result
 Software states that both operations are illegal, and report shall state that beefy is not on the table.
+
 ### REPORT command
 Report shall describe Beefy's position and bearing.
 #### Preconditions
@@ -62,6 +64,7 @@ N/A
 
 #### Expected result
 Software states that Beefy is in position 1,1, and facing north
+
 ### REPORT fail testing
 Test that initiating a REPORT before beefy is on the board, will report that beefy is not on the board, instead of failing ungracefully.
 #### Preconditions
@@ -74,6 +77,7 @@ N/A
 
 #### Expected result
 Software states that Beefy can not report his position, as he is not on the table
+
 ### MOVE command
 MOVE shall have beefy move west,north,east, or south one tile depending on his bearing
 #### Preconditions
