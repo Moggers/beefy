@@ -6,7 +6,7 @@ Attempting to initiate a command which would place beefy beyond the allowed fiel
 ### CLI
 1. npm install
 2. gulp cli
-3. node dist/cli.js
+3. node dist/beefycli.js
 
 ### Tests
 1. npm install
