@@ -145,12 +145,13 @@ export default class Beefy {
         let rval = 0
         switch(strarr[0]){
         case "PLACE":
-            let re = new RegExp("PLACE [0-4] [0-4] (north|east|south|west)")
+            let re = new RegExp("PLACE ([0-4])( |,)([0-4])( |,)(north|east|south|west)")
             let ret = str.search(re)
             if( ret == -1) {
-                return "PLACE syntax is '/^PLACE [0-4] [0-4] (north|west|south|east)$/"
+                return "PLACE syntax is '/^PLACE [0-4](,| )[0-4](,| )(north|west|south|east)$/ e.g. PLACE 1 1 north"
             }
-            rval = this.place(strarr[1], strarr[2], strarr[3])
+            let arr = re.exec(str)
+            rval = this.place(arr[1], arr[3], arr[5])
             switch(rval) {
                 case 1:
                     return "Tried to place outside of boundaries"
