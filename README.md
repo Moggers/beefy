@@ -163,10 +163,11 @@ N/A
 #### Test Steps
 1. Start Software
 2. Enter "LEFT"
+
 #### Expected results
-Beefy shall complain it can't turn left as it is not on the table
+Beefy shall complain it can't turn right as it is not on the table
 ### RIGHT command
-Beefy, when on the board, shall use LEFT to turn one quarter circle clockwise
+Beefy, when on the board, shall use RIGHT to turn one quarter circle clockwise
 #### Preconditions
 Beefy is on the board
 #### Assumptions
